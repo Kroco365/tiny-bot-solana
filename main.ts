@@ -151,7 +151,7 @@ await runBars({
     const slots = Math.min(state.hello.symbols.length, caps.max_open_positions);
     const stake = state.equity / BigInt(slots);
     const byWeight = (BigInt(caps.max_weight_bps) * state.equity) / BPS;
-    let room = slots - state.positions.size + sells.length;
+    let room = slots - state.positions.size + orders.length;
     let cash = state.cash;
     for (const symbol of entries) {
       if (room <= 0 || orders.length >= caps.max_orders_per_bar) break;
